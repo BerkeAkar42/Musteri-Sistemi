@@ -37,11 +37,13 @@ namespace DAL.Data
         public static void Remove(Musteri item)
         {
             MusteriVT.Remove(item);
+            Save();
         }
 
         public static void AllRemove()
         {
             MusteriVT.Clear();
+            Save();
         }
 
         public static List<Musteri> GetAllVT()
@@ -50,6 +52,7 @@ namespace DAL.Data
         }
 
 
+        //JSON Save Fonksiyonu Burada:
         public static void Save()
         {
             jsonVeriKaydet.Save();
